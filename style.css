@@ -1,0 +1,132 @@
+@import url('https://css.gg/close.css');
+
+body{
+    height: 100vh;
+    margin: 0;
+    place-items: center;
+    display: grid;
+}
+
+:root{
+    --gap: 30px;
+    --height: 50px;
+    --fontSize: 16px;
+    --font: poppins;
+    --primaryColor: #F7DCD5;
+    --secondaryColor: #FA8462;
+}
+
+.container{
+    background-color: transparent;
+    box-shadow: 0px 0px 3em #fa836234;
+    width: 25em;
+    
+    display: grid;
+    justify-content: center;
+    
+    
+}
+
+h1{
+    color: var(--secondaryColor);
+    font-family: var(--font) medium;
+    position: relative;
+    bottom: 50px;
+    font-size: 54px;
+    margin-top: calc(50% - 50px);
+}
+
+.login-form{
+    position: relative;
+    font-family: var(--font);
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: var(--gap);
+    width: 17em;
+    bottom: 50px;
+    
+    
+}
+label{
+    transition: 0.3s;
+    color: #6a6a6a;
+}
+
+label:nth-child(1){
+    
+    font-size: var(--fontSize);
+    position: absolute;
+    top: calc(var(--height) - var(--height)/2 - var(--fontSize)/1.5);
+    left: 2%;
+}
+
+label:nth-child(3){
+    font-size: var(--fontSize);
+    position: absolute;
+    top: calc((var(--gap) + var(--height)) + var(--height) - var(--height)/2 - var(--fontSize)/1.5);
+    left: 2%;
+}
+
+input:not(input:last-of-type){
+    height: var(--height);
+    box-sizing: border-box;
+    border: none;
+    font-size: 18px;
+    color: #6a6a6a;
+    padding-top: 10px;
+    background-color: transparent;
+    border-bottom: 2px solid var(--primaryColor);
+    grid-column: 1/3;
+    padding-left: 2.5%;
+    transition: 0.3s;
+}
+
+input:last-of-type{
+    position: relative;
+    top: 30px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    background-color: var(--secondaryColor);
+    color: white;
+    font-weight: 600;
+    font-size: var(--fontSize);
+    cursor: pointer;
+    transition: .3s;
+    grid-column: 1/3;
+}
+
+input:last-of-type:hover{
+    background-color: transparent;
+    outline: 3px solid var(--secondaryColor);
+    color: var(--secondaryColor);
+}
+
+input:focus{
+    outline: none;
+}
+input:not(input:last-of-type):focus{
+    border-color: var(--secondaryColor);
+}
+
+#msg{
+    margin-top: 15px;
+}
+#msg span{
+    margin-top: 5px;
+    display: block;
+    color: red;
+    opacity: 1;
+    animation: fadein .6s ease ;
+}
+#msg span::before{
+    content: '\2716';
+    margin-right: 7px;
+    animation: fadein .6s ease ;
+}
+
+@keyframes fadein {
+    0%{ opacity: 0;}
+    100%{ opacity: 1;}
+}
+
